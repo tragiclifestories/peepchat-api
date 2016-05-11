@@ -1,0 +1,17 @@
+language: elixir
+elixir:
+- 1.2
+otp_release:
+- 18.2
+sudo: false
+addons:
+  postgresql: '9.4'
+before_script:
+- psql -c 'create database peepchat_test;' -U postgres
+deploy:
+  provider: heroku
+  api_key:
+    secure: KCKKB/RpecQIKITQrCFAxOLcbM94mzgYcEOtQ8LiKG0UIC1lY/D2Y7fp8d1be5FafSDGhmHwydO9dQHSDDoGQ5nNVckQIX0I9+kNbGRXfQUHdsdz8TDiqtI88EAyUw2kJQNOTwImQU0JuxSdFfmBaX33fDlH7uyP2lL92xD3XTdi+wRiX9vuazcNoc0wbGm4UpLz0r+2phYiJScI3bkg3nHUoX3CqwoGtkuoptp6Ffs4rifUuju0k62hGtTqEq5Z0Xwz3Kj0Z31X7wMdEynlf8sB65rfCAfqPSL9vZY8rLt0zocqzG7halCZdc7jv1wcZB63vC4vKZ0YoOZP8RCSzY8dyXDTykkz5vT/3ODAmREFPCscvW9WfZwQy7St/cqrjRelllhPHdZxn5IF7C5+My9lC9X22utM9pj7Tex4SQesJXPXyI5uOs71z4nElx9wTrJlNzz4SFksFBVhfLik8+2yZhNLauujGgH09HctquaX3mGzkFyVIgYgfsY+87FBhWwoWqFgeNlyzxqhagyXpQWVhHJgSxXAXkeiiAXWwbXqMd/QM5D/niP6tSgSVC+0YWEWo7IYYPMOJR52Hy5BSYRA+mF8jQtohRGxBoonKdQ3iHSoJpLUE70dTW+bENEBQjTfCRdo/S755jyZaT27HOfzpNrzIRc97G9USAveGV0=
+  app: calm-peak-62413
+  on:
+    repo: tragiclifestories/peepchat-api
