@@ -20,6 +20,7 @@ defmodule Peepchat.Router do
 
   scope "/api", Peepchat do
     pipe_through :api_auth
+    resources "rooms", RoomController, except: [:new, :edit]
     get "/user/current", UserController, :current
   end
 end
