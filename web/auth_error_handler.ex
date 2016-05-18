@@ -7,9 +7,9 @@ defmodule Peepchat.AuthErrorHandler do
     |> render(Peepchat.ErrorView, "401.json")
   end
 
-  def unauthorized(conn, params) do
+ def unauthorized(conn, params) do
     conn
     |> put_status(403)
     |> render(Peepchat.ErrorView, "403.json")
-  end
+ end
 end
